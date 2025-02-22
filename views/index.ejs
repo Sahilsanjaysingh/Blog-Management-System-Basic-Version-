@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Management System</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Welcome to the Blog Management System!</h1>
+
+    <nav>
+        <ul>
+            <li><a href="/posts"> View All Posts</a></li>
+            <li><a href="/add-post"> Add a New Post</a></li>
+        </ul>
+    </nav>
+
+    <h2>All Posts</h2>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li>
+                <h3><a href="/post?id=<%= post.id %>"><%= post.title %></a></h3>
+                <p><%= post.content.substring(0, 100) %>...</p>
+            </li>
+        <% }) %>
+    </ul>
+
+</body>
+</html>
